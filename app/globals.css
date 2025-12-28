@@ -3,6 +3,10 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --link-color: #1772d0;
+  --link-hover: #f09228;
+  --highlight-bg: #ffffd0;
+  --award-color: #ff0000;
 }
 
 @theme inline {
@@ -12,15 +16,261 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Lato", Verdana, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: var(--link-hover);
+}
+
+/* Layout */
+.main-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+.header {
+  padding: 20px 0;
+}
+
+.header-content {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.header-text {
+  flex: 3;
+}
+
+.name {
+  font-size: 32px;
+  font-weight: normal;
+  margin: 0 0 16px 0;
+  text-align: center;
+}
+
+.bio p {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+}
+
+.social-links {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.social-links .separator {
+  margin: 0 8px;
+  color: #666;
+}
+
+.header-photo {
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.profile-photo {
+  border-radius: 50%;
+  object-fit: cover;
+  transform: scale(1);
+}
+
+/* Philosophy */
+.philosophy-section {
+  padding: 20px 0;
+}
+
+.philosophy-section h2 {
+  font-size: 22px;
+  font-weight: normal;
+  margin: 0 0 16px 0;
+}
+
+.philosophy-content p {
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.companies-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.company-tag {
+  background: #f5f5f5;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  border: 1px solid #e5e5e5;
+}
+
+.philosophy-quote {
+  margin: 24px 0;
+  padding: 16px 20px;
+  border-left: 3px solid var(--link-color);
+  background: #f9f9f9;
+  font-style: italic;
+  color: #555;
+}
+
+.philosophy-quote strong {
+  color: #333;
+  font-style: normal;
+}
+
+@media (max-width: 600px) {
+  .companies-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Publications */
+.publications-section {
+  padding: 20px 0;
+}
+
+.publications-section h2 {
+  font-size: 22px;
+  font-weight: normal;
+  margin: 0 0 16px 0;
+}
+
+.research-description {
+  margin-bottom: 24px;
+}
+
+.publications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.publication-card {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 4px;
+}
+
+.publication-card.highlighted {
+  background-color: var(--highlight-bg);
+}
+
+.publication-image {
+  flex-shrink: 0;
+  width: 160px;
+}
+
+.image-container {
+  position: relative;
+  width: 160px;
+  height: 160px;
+}
+
+.image-container .base-image,
+.image-container .hover-media {
+  object-fit: cover;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.image-container .base-image.hidden {
+  opacity: 0;
+}
+
+.image-container .hover-media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.image-container .hover-media.visible {
+  opacity: 1;
+}
+
+.publication-details {
+  flex: 1;
+}
+
+.publication-title {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.authors {
+  margin-top: 4px;
+}
+
+.authors a {
+  color: var(--link-color);
+}
+
+.venue {
+  margin-top: 4px;
+}
+
+.award {
+  color: var(--award-color);
+  font-weight: bold;
+}
+
+.links {
+  margin-top: 8px;
+}
+
+.description {
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+/* Footer */
+.footer {
+  padding: 40px 0;
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .header-content {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+  }
+
+  .publication-card {
+    flex-direction: column;
+  }
+
+  .publication-image {
+    width: 100%;
+  }
+
+  .image-container {
+    width: 100%;
+    height: 200px;
+  }
 }
