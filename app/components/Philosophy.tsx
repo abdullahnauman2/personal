@@ -40,7 +40,7 @@ export function Philosophy() {
           ))}
         </ul>
 
-        ...and of course <strong className="text-gray-800 not-italic">Claybird (YC F25)</strong>, for I met the incredible{" "}
+        ...and of course <strong className="text-gray-800 not-italic">Claybird (YC F25)</strong>, I my co-founder{" "}
         <a href="https://www.linkedin.com/in/sadjamz/" target="_blank">Saad Jamal</a> at Powell as well.
       </div>
     </section>
