@@ -2,7 +2,7 @@ import { ProfileData } from "./types";
 
 export const profile: ProfileData = {
   name: "Abdullah Nauman",
-  photo: "/images/profile.png",
+  photo: "/images/profile2.png",
   bio: `I'm interested in personalization, proactive intelligence, and generative interfaces. I care deeply about my work's ability to impact everyday people.
 
 Currently, I'm building <a href="https://claybird.com" target="_blank">Claybird</a> - we use AI video models to generate and retarget hyper-personal ads. We work with brands like Coca-Cola, Mercor, Delve, and Eight Sleep, and are backed by <a href="https://www.ycombinator.com/companies?batch=Fall%202025" target="_blank">YC</a>, <a href="https://lsvp.com/" target="_blank">Lightspeed</a>, and <a href="https://www.susaventures.com/" target="_blank">Susa Ventures</a>.
